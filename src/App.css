@@ -16,6 +16,10 @@ body {
         .fa-trash:hover {
             cursor: pointer;
         }
+
+        img {
+            width: 100px;
+        }
     }
 
     /* Footer */

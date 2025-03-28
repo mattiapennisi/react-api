@@ -1,10 +1,7 @@
 export default function Main({ posts, setPosts }) {
     function handleDelete(slug) {
         fetch(`http://localhost:3000/posts/${slug}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            method: 'DELETE'
         })
             .then(res => {
                 if (res.ok) {
@@ -33,7 +30,7 @@ export default function Main({ posts, setPosts }) {
                         {posts && posts.map(post => (
                             <tr key={post.slug}>
                                 <td scope="row">{post.title}</td>
-                                <td>{post.image}</td>
+                                <td><img src={`http://localhost:3000/public/imgs/posts/${post.image}`} alt={post.title} /></td>
                                 <td><i className="fa-solid fa-trash" onClick={(e) => handleDelete(post.slug)}></i></td>
                             </tr>
                         ))}
