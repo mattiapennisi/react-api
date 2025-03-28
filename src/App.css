@@ -12,6 +12,10 @@ body {
 
     #main {
         width: 100%;
+
+        .fa-trash:hover {
+            cursor: pointer;
+        }
     }
 
     /* Footer */
