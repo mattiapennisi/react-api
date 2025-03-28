@@ -2,10 +2,10 @@ export default function Main() {
     return (
         <main id="main">
             <div
-                class="table-responsive"
+                className="table-responsive"
             >
                 <table
-                    class="table table-primary"
+                    className="table table-primary"
                 >
                     <thead>
                         <tr>
@@ -15,12 +15,12 @@ export default function Main() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="">
+                        <tr className="">
                             <td scope="row">R1C1</td>
                             <td>R1C2</td>
                             <td>R1C3</td>
                         </tr>
-                        <tr class="">
+                        <tr className="">
                             <td scope="row">Item</td>
                             <td>Item</td>
                             <td>Item</td>

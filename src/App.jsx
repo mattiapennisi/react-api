@@ -4,7 +4,7 @@ import Header from './components/Header.jsx'
 import Main from './components/Main.jsx'
 import Footer from './components/Footer.jsx'
 
-const url = 'http://localhost:3000'
+const url = 'http://localhost:3000/posts'
 
 function App() {
 
