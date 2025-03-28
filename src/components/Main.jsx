@@ -1,34 +1,26 @@
-export default function Main() {
+export default function Main({ posts, setPosts }) {
     return (
         <main id="main">
-            <div
-                className="table-responsive"
-            >
-                <table
-                    className="table table-primary"
-                >
+            <div className="table-responsive">
+                <table className="table table-primary">
                     <thead>
                         <tr>
-                            <th scope="col">Column 1</th>
-                            <th scope="col">Column 2</th>
-                            <th scope="col">Column 3</th>
+                            <th scope="col" className="fw-bold h4">Name</th>
+                            <th scope="col" className="fw-bold h4">Image</th>
+                            <th scope="col" className="fw-bold h4">Tools</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="">
-                            <td scope="row">R1C1</td>
-                            <td>R1C2</td>
-                            <td>R1C3</td>
-                        </tr>
-                        <tr className="">
-                            <td scope="row">Item</td>
-                            <td>Item</td>
-                            <td>Item</td>
-                        </tr>
+                        {posts && posts.map(post => (
+                            <tr key={post.slug}>
+                                <td scope="row">{post.title}</td>
+                                <td>{post.image}</td>
+                                <td><i className="fa-solid fa-trash"></i></td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
-
         </main>
     )
 }

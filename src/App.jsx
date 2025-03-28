@@ -8,13 +8,14 @@ const url = 'http://localhost:3000/posts'
 
 function App() {
 
+  const [posts, setPosts] = useState([])
+
   function  fetchData() {
 
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
-        
+        setPosts(data)
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -25,10 +26,12 @@ function App() {
     fetchData()
   }, [])
 
+  console.log(posts);
+
   return (
     <>
       <Header />
-      <Main />
+      <Main posts={posts} setPosts={setPosts} />
       <Footer />
     </>
   )
