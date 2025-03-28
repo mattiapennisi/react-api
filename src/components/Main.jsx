@@ -16,22 +16,36 @@ export default function Main({ posts, setPosts }) {
     }
 
     return (
-        <main id="main">
-            <div className="table-responsive">
-                <table className="table table-primary">
-                    <thead>
+        <main id="main" className="container py-4">
+            <div className="table-responsive shadow rounded">
+                <table className="table table-hover mb-0">
+                    <thead className="table-dark">
                         <tr>
-                            <th scope="col" className="fw-bold h4">Name</th>
-                            <th scope="col" className="fw-bold h4">Image</th>
-                            <th scope="col" className="fw-bold h4">Tools</th>
+                            <th scope="col" className="fw-bold">Name</th>
+                            <th scope="col" className="fw-bold">Image</th>
+                            <th scope="col" className="fw-bold text-center">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {posts && posts.map(post => (
                             <tr key={post.slug}>
-                                <td scope="row">{post.title}</td>
-                                <td><img src={`http://localhost:3000/public/imgs/posts/${post.image}`} alt={post.title} /></td>
-                                <td><i className="fa-solid fa-trash" onClick={(e) => handleDelete(post.slug)}></i></td>
+                                <td className="align-middle">{post.title}</td>
+                                <td className="align-middle">
+                                    <img
+                                        src={`http://localhost:3000/public/imgs/posts/${post.image}`}
+                                        alt={post.title}
+                                        className="img-thumbnail"
+                                    />
+                                </td>
+                                <td className="align-middle text-center">
+                                    <button
+                                        className="btn btn-danger btn-sm"
+                                        onClick={() => handleDelete(post.slug)}
+                                    >
+                                        <i className="fa-solid fa-trash me-2"></i>
+                                        Delete
+                                    </button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
